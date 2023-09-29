@@ -1,0 +1,19 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "Countries' information app",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "erenymo",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "core-js": "^3.32.2",
+    "regenerator-runtime": "^0.14.0"
+  }
+}
