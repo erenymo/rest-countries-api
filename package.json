@@ -4,7 +4,7 @@
   "description": "Countries' information app",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build src/index.html --dist-dir ./dist"
   },
   "author": "erenymo",
   "license": "ISC",
