@@ -17,6 +17,7 @@ const createCountryObject = function (data, i = 0) {
     capital: data[i].capital[0],
     flagUrl: data[i].flags.png,
     nativeName: data[i].name.nativeName,
+    cca2: data[i].cca2,
   });
 };
 
@@ -51,6 +52,7 @@ export const loadSearchResults = async function (query, region = false) {
         capital: country.capital,
         flagUrl: country.flags.png,
         nativeName: country.name.nativeName,
+        cca2: country.cca2,
       };
     });
   } catch (err) {

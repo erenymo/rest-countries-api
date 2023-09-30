@@ -21,8 +21,8 @@ class ResultsView {
   _generateMarkup() {
     return `
         <li
-        class="country--card shadow-lg bg-elements rounded overflow-hidden"
-      >
+        class="country--card shadow-lg bg-elements rounded overflow-hidden hover:-translate-y-4 duration-300"
+      ><a href="country.html#${this._data.cca2}">
         <img
           class="country-flag w-full h-44"
           src="${this._data.flagUrl}"
@@ -30,9 +30,13 @@ class ResultsView {
         />
       
         <div class="country--info p-6">
-          <h1 class="country--name font-bold text-xl mb">${this._data.countryName}</h1>
+          <h1 class="country--name font-bold text-xl mb">${
+            this._data.countryName
+          }</h1>
           <p class="country--population font-semibold mt-4">
-            Population: <span class="font-normal">${this._data.population}</span>
+            Population: <span class="font-normal">${this._data.population.toLocaleString(
+              "tr-TR"
+            )}</span>
           </p>
           <p class="country--region font-semibold">
             Region: <span class="font-normal">${this._data.region}</span>
@@ -41,6 +45,7 @@ class ResultsView {
             Capital: <span class="font-normal">${this._data.capital}</span>
           </p>
         </div>
+        </a>
       </li>
           `;
   }
