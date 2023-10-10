@@ -3,6 +3,21 @@ import * as model from "./model.js";
 import resultsView from "./views/resultsView.js";
 import searchView from "./views/searchView.js";
 import filterView from "./views/filterView.js";
+import countryView from "./views/countryView.js";
+
+const controlCountry = async function () {
+  // takes the hash part of url
+  const id = window.location.hash.slice(1);
+  console.log(id);
+  if (!id) return;
+
+  console.log("hi");
+
+  await model.loadCountry(id);
+
+  countryView.render(model.state.country);
+  console.log("tamamlandi");
+};
 
 const controlSearchResults = async function () {
   try {
@@ -38,5 +53,6 @@ const controlFilterResults = async function () {
 const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   filterView.addHandlerFilter(controlFilterResults);
+  countryView.addHandlerRender(controlCountry);
 };
 init();

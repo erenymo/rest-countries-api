@@ -10,20 +10,36 @@ export const state = {
 };
 
 const createCountryObject = function (data, i = 0) {
+  const languages = data[i].languages;
+  const languagesArray = Object.entries(languages).map(function (item) {
+    return {
+      code: item[0],
+      name: item[1],
+    };
+  });
+
+  const currencyArray = Object.values(data[i].currencies);
+  const nativeName = Object.values(data[i].name.nativeName);
+
   return (state.country = {
     countryName: data[i].name.common,
     population: data[i].population,
     region: data[i].region,
+    subRegion: data[i].subregion,
     capital: data[i].capital[0],
+    topLevelDomain: data[i].tld[0],
     flagUrl: data[i].flags.png,
-    nativeName: data[i].name.nativeName,
+    nativeName: nativeName[0].common,
     cca2: data[i].cca2,
+    languages: languagesArray,
+    currencies: currencyArray[0].name,
+    borders: data[i].borders,
   });
 };
 
-export const loadCountry = async function (name) {
+export const loadCountry = async function (id) {
   try {
-    const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+    const res = await fetch(`https://restcountries.com/v3.1/alpha/${id}`);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
@@ -43,7 +59,7 @@ export const loadSearchResults = async function (query, region = false) {
     );
     const data = await res.json();
 
-    console.log(data);
+    // console.log(data);
     state.search.results = data.map((country) => {
       return {
         countryName: country.name.common,
