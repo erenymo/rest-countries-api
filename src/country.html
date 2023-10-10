@@ -44,6 +44,65 @@
           <i class="fa-solid fa-arrow-left-long mr-1"></i> Back
         </a>
       </section>
+
+      <section class="container mx-auto my-12 px-8 sm:px-0">
+        <div
+          class="container__country--detail w-full grid grid-cols-1 md:grid-cols-2 gap-36"
+        >
+          <!-- Country Flag -->
+          <div class="flag--area w-full xl:h-86 h-72">
+            <img
+              class="w-full h-full"
+              src="https://flagcdn.com/w320/de.png"
+              alt="country flag"
+            />
+          </div>
+
+          <!-- Country Details -->
+          <div class="country--detail flex flex-col justify-center gap-8">
+            <h2 class="country--name font-bold text-2xl">Belgium</h2>
+            <div class="country--informations grid grid-cols-1 md:grid-cols-2">
+              <div class="first--part flex flex-col gap-2">
+                <p class="country--native-name font-semibold">
+                  Native Name: <span class="font-normal">Belgie</span>
+                </p>
+                <p class="country--population font-semibold">
+                  Population: <span class="font-normal">11,531,119</span>
+                </p>
+                <p class="country--region font-semibold">
+                  Region: <span class="font-normal">Europe</span>
+                </p>
+                <p class="country--sub-region font-semibold">
+                  Sub Region: <span class="font-normal">Western Europe</span>
+                </p>
+                <p class="country--capital font-semibold">
+                  Capital: <span class="font-normal">Brussels</span>
+                </p>
+              </div>
+              <div class="second--part flex flex-col gap-2">
+                <p class="country--domain font-semibold">
+                  Top Level Domain: <span class="font-normal">.be</span>
+                </p>
+                <p class="country--currency font-semibold">
+                  Currencies: <span class="font-normal">Euro</span>
+                </p>
+                <p class="country--languages font-semibold">
+                  Languages:
+                  <span class="font-normal">Dutch, French, German</span>
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <p class="country--borders font-semibold mr-2">
+                Border Countries:
+              </p>
+              <div class="container__border">
+                <button class="country--border py-1 px-3 border">France</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
