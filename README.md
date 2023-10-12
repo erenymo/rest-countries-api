@@ -4,7 +4,7 @@
 
 ## Welcome! 👋
 
-[Click Here to Check the Live Website](https://rest-countries-api-erenymo.netlify.app)
+[Click Here to Check the Live Website](https://countrying.netlify.app)
 
 
 ## The challenge
