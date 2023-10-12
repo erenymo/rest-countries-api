@@ -8,15 +8,11 @@ import countryView from "./views/countryView.js";
 const controlCountry = async function () {
   // takes the hash part of url
   const id = window.location.hash.slice(1);
-  console.log(id);
   if (!id) return;
-
-  console.log("hi");
 
   await model.loadCountry(id);
 
   countryView.render(model.state.country);
-  console.log("tamamlandi");
 };
 
 const controlSearchResults = async function () {
@@ -51,13 +47,17 @@ const controlFilterResults = async function () {
 };
 
 const toggleDarkMode = function () {
-  const buttonDarkTheme = document.querySelector(".theme-switch");
+  const buttonsDarkTheme = document.querySelectorAll(".theme-switch");
 
   // Icon
   const moonIcon = document.querySelector(".moon");
   const sunIcon = document.querySelector(".sun");
   const moonText = document.querySelector(".moon-text");
   const lightText = document.querySelector(".light-text");
+
+  // Theme Vars
+  const userTheme = localStorage.getItem("theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   // Icon Toggling
   const iconToggle = () => {
@@ -67,18 +67,38 @@ const toggleDarkMode = function () {
     lightText.classList.toggle("hidden");
   };
 
+  // Initial Theme Check
+  const themeCheck = () => {
+    if (userTheme === "dark" || (!userTheme && systemTheme)) {
+      document.documentElement.classList.add("dark");
+      moonIcon.classList.add("hidden");
+      moonText.classList.add("hidden");
+      sunIcon.classList.remove("hidden");
+      lightText.classList.remove("hidden");
+      return;
+    }
+    sunIcon.classList.add("hidden");
+  };
+
   // Manual Theme Switch
   const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
       iconToggle();
       return;
     }
     document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
     iconToggle();
   };
 
-  buttonDarkTheme.addEventListener("click", themeSwitch);
+  buttonsDarkTheme.forEach(function (button) {
+    button.addEventListener("click", themeSwitch);
+  });
+
+  // invoke theme check on initial load
+  themeCheck();
 };
 toggleDarkMode();
 

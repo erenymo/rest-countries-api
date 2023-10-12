@@ -21,7 +21,7 @@ class ResultsView {
   _generateMarkup() {
     return `
         <li
-        class="country--card shadow-lg bg-elements rounded overflow-hidden hover:-translate-y-4 duration-300"
+        class="country--card shadow-lg bg-elements dark:text-elements dark:bg-darkModeElements rounded overflow-hidden hover:-translate-y-4 duration-300"
       ><a href="country.html#${this._data.cca2}">
         <img
           class="country-flag w-full h-44"

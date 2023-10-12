@@ -25,12 +25,14 @@
   <body class="font-primary bg-background dark:bg-darkModeBackground">
     <header class="bg-white dark:bg-darkModeElements shadow">
       <div class="container mx-auto py-5 flex justify-between px-8 sm:px-0">
-        <h1 class="font-extrabold text-xl">Where in the world?</h1>
+        <h1 class="font-extrabold text-xl dark:text-elements">
+          Where in the world?
+        </h1>
         <button class="theme-switch flex items-center gap-2 px-2">
           <i class="moon fa-regular fa-moon -rotate-12"></i>
           <h2 class="moon-text font-semibold">Dark Mode</h2>
-          <i class="sun fa-solid fa-sun hidden"></i>
-          <h2 class="light-text font-semibold hidden">Ligh Mode</h2>
+          <i class="sun fa-solid fa-sun hidden text-white"></i>
+          <h2 class="light-text font-semibold hidden text-white">Light Mode</h2>
         </button>
       </div>
     </header>
@@ -41,11 +43,11 @@
       >
         <!--Search Bar-->
         <div
-          class="search bg-elements w-full sm:w-96 py-3 pl-6 pr-2 flex items-center gap-4 text-input shadow-sm rounded"
+          class="search bg-elements dark:bg-darkModeElements w-full sm:w-96 py-3 pl-6 pr-2 flex items-center gap-4 text-input shadow-sm rounded"
         >
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass dark:text-elements"></i>
           <input
-            class="search--field outline-none text-input w-full"
+            class="search--field outline-none text-input dark:text-elements w-full dark:bg-darkModeElements"
             type="text"
             placeholder="Search for a country..."
             name=""
@@ -55,7 +57,7 @@
 
         <!--Region Filter-->
         <select
-          class="outline-none px-4 py-3 w-48 border-none rounded"
+          class="outline-none px-4 py-3 w-48 border-none rounded dark:bg-darkModeElements dark:text-white"
           name="region"
           id="region-select"
         >
@@ -75,14 +77,13 @@
         <ul
           class="container__countries grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7"
         >
-          <span
+          <span class="dark:text-elements"
             ><i class="fa-solid fa-globe"></i> Start typing or filtering to
             reach the countries !</span
           >
 
-          <!--
           <li
-            class="country--card shadow-lg bg-elements rounded overflow-hidden"
+            class="country--card shadow-lg bg-elements dark:text-elements dark:bg-darkModeElements rounded overflow-hidden hidden"
           >
             <a href="country.html">
               <img
@@ -105,7 +106,6 @@
               </div>
             </a>
           </li>
-          -->
         </ul>
       </section>
     </main>

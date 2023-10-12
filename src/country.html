@@ -22,15 +22,15 @@
 
     <script type="module" defer src="./js/controller.js"></script>
   </head>
-  <body class="font-primary bg-background">
-    <header class="bg-white shadow">
+  <body class="font-primary bg-background dark:bg-darkModeBackground">
+    <header class="bg-white dark:bg-darkModeElements shadow">
       <div class="container mx-auto py-5 flex justify-between px-8 sm:px-0">
-        <h1 class="font-extrabold text-xl">Where in the world?</h1>
+        <h1 class="font-extrabold text-xl dark:text-elements">Where in the world?</h1>
         <button class="theme-switch flex items-center gap-2 px-2">
           <i class="moon fa-regular fa-moon -rotate-12"></i>
           <h2 class="moon-text font-semibold">Dark Mode</h2>
-          <i class="sun fa-solid fa-sun hidden"></i>
-          <h2 class="light-text font-semibold hidden">Ligh Mode</h2>
+          <i class="sun fa-solid fa-sun hidden dark:text-elements"></i>
+          <h2 class="light-text font-semibold hidden dark:text-elements">Light Mode</h2>
         </button>
       </div>
     </header>
@@ -69,7 +69,7 @@
       >
         <a
           href="index.html"
-          class="bg-elements shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-2 px-8 rounded hover:-translate-y-1 duration-200"
+          class="bg-elements dark:bg-darkModeElements dark:text-elements shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-2 px-8 rounded hover:-translate-y-1 duration-200"
         >
           <i class="fa-solid fa-arrow-left-long mr-1"></i> Back
         </a>

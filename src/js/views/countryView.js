@@ -22,15 +22,17 @@ class CountryView {
 
   _generateMarkup() {
     return `
-    <div class="flag--area w-full xl:h-86 h-72">
+          <div class="flag--area w-full  xl:h-86 h-72">
             <img
               class="w-full h-full"
               src="${this._data.flagUrl}"
               alt="country flag"
             />
           </div>
-          <div class="country--detail flex flex-col justify-center gap-8">
-    <h2 class="country--name font-bold text-2xl">${this._data.countryName}</h2>
+          <div class="country--detail dark:text-elements flex flex-col justify-center gap-8">
+            <h2 class="country--name font-bold text-2xl">${
+              this._data.countryName
+            }</h2>
             <div class="country--informations grid grid-cols-1 md:grid-cols-2">
               <div class="first--part flex flex-col gap-2">
                 <p class="country--native-name font-semibold">
