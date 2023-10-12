@@ -4,7 +4,7 @@
 
 ## Welcome! 👋
 
-[Click Here to Check the Live Website](https://countrying.netlify.app)
+[Click Here to Live Website](https://countrying.netlify.app)
 
 
 ## The challenge
